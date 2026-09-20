@@ -7,7 +7,7 @@ const claims = [
 
 export function TrustStrip() {
   return (
-    <section aria-label="Why trust FixItNow" className="border-t-2 border-dashed border-ink/20">
+    <section aria-label="Why trust FixItNow" className="border-t border-edge">
       <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
         <ul className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 font-mono text-xs uppercase tracking-wider text-steel">
           {claims.map((claim) => (

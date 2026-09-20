@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function RecordError({ retryHref = "/dashboard/profile" }: { retryHref?: string }) {
   return (
-    <div className="mx-auto max-w-3xl rounded-md border-2 border-dashed border-ink/30 bg-bone px-6 py-16 text-center">
+    <div className="mx-auto max-w-3xl rounded-2xl border-2 border-dashed border-edge bg-ticket-hi px-6 py-16 text-center">
       <p className="font-display text-xl font-bold text-ink">
         Couldn&apos;t read your record.
       </p>
@@ -12,7 +12,7 @@ export function RecordError({ retryHref = "/dashboard/profile" }: { retryHref?: 
       </p>
       <Link
         href={retryHref}
-        className="mt-6 inline-block rounded-sm border-2 border-ink bg-safety px-5 py-2.5 font-display text-sm font-bold text-ink shadow-[3px_3px_0_rgba(33,30,25,0.25)] transition-transform hover:-translate-y-0.5 active:translate-y-0"
+        className="mt-6 inline-block rounded-xl bg-primary px-5 py-2.5 font-display text-sm font-bold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
       >
         Try again
       </Link>

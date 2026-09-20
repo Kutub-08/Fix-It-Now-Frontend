@@ -12,14 +12,14 @@ export default function AdminCategoriesLoading() {
           {Array.from({ length: 4 }).map((_, i) => (
             <div
               key={i}
-              className="h-24 rounded-md border-2 border-ink/10 bg-bone p-5"
+              className="h-24 rounded-2xl border border-edge bg-ticket-hi p-5"
             >
               <div className="h-4 w-40 rounded bg-ink/10" />
               <div className="mt-2 h-3 w-56 rounded bg-ink/10" />
             </div>
           ))}
         </div>
-        <div className="h-72 rounded-md border-2 border-ink/10 bg-bone p-5" />
+        <div className="h-72 rounded-2xl border border-edge bg-ticket-hi p-5" />
       </div>
     </div>
   );

@@ -33,7 +33,7 @@ const channels = [
 
 export function Channels() {
   return (
-    <section className="border-t-2 border-dashed border-ink/20">
+    <section className="border-t border-edge">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <SectionHeading
           eyebrow={"// Reach the team"}
@@ -45,7 +45,7 @@ export function Channels() {
             const inner = (
               <>
                 <div className="flex items-center justify-between">
-                  <span className="flex size-10 items-center justify-center rounded-full border-2 border-ink/60 bg-ticket text-ink">
+                  <span className="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
                     <channel.icon className="size-4" aria-hidden />
                   </span>
                   <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-safety">
@@ -64,7 +64,7 @@ export function Channels() {
             return (
               <Card
                 key={channel.label}
-                className="group flex flex-col rounded-sm border-ink/25 bg-ticket-hi p-6 shadow-none transition-all hover:-translate-y-0.5 hover:border-safety"
+                className="group flex flex-col rounded-2xl border-edge bg-ticket-hi p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
               >
                 {channel.href ? (
                   <a

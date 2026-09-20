@@ -9,7 +9,7 @@ import { Category } from "@/lib/types";
 function Ticker() {
   const items = [...tickerItems, ...tickerItems];
   return (
-    <div className="overflow-hidden border-y-2 border-ink/60 bg-safety text-ink">
+    <div className="overflow-hidden border-y border-edge bg-safety text-ink">
       <div className="marquee-mask">
         <div className="animate-marquee flex w-max items-center py-3">
           {items.map((item, i) => (
@@ -47,14 +47,14 @@ export async function Categories() {
           {allCategories.map((category : Category) => (
             <Card
               key={category.id}
-              className="group flex items-center gap-3 rounded-sm border-ink/25 bg-ticket-hi p-4 shadow-none transition-all hover:-translate-y-0.5 hover:border-ink"
+              className="group flex items-center gap-3 rounded-2xl border-edge bg-ticket-hi p-4 shadow-none transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
             >
               <Link
                 href="/services"
                 className="flex items-center gap-3"
                 aria-label={`${category.name} services`}
               >
-                <span className="flex size-10 shrink-0 items-center justify-center border-2 border-ink/70 bg-ticket font-mono text-xs font-bold text-ink">
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 font-display text-base font-bold text-primary">
                   {category.name.charAt(0).toUpperCase()}
                 </span>
                 <span className="min-w-0">

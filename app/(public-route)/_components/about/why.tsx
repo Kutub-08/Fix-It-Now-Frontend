@@ -1,6 +1,6 @@
 export function Why() {
   return (
-    <section className="border-t-2 border-dashed border-ink/20">
+    <section className="border-t border-edge">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-safety">
           {"// Why it exists"}
@@ -9,8 +9,8 @@ export function Why() {
           Repairs shouldn&apos;t be a gamble.
         </h2>
 
-        <div className="mt-10 grid gap-10 md:grid-cols-2">
-          <div>
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <div className="rounded-2xl border border-edge bg-ticket-hi p-6 shadow-sm sm:p-8">
             <p className="font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-steel">
               {"// The old way"}
             </p>
@@ -24,8 +24,8 @@ export function Why() {
               A small job becomes a gamble with your door open.
             </p>
           </div>
-          <div>
-            <p className="font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-steel">
+          <div className="rounded-2xl border border-primary/30 bg-primary/5 p-6 shadow-sm sm:p-8">
+            <p className="font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-safety">
               {"// The FixItNow way"}
             </p>
             <p className="mt-3 text-base leading-relaxed text-ink/80">

@@ -55,20 +55,20 @@ export function UserMenu() {
     <div ref={rootRef} className="relative">
       {status === "loading" ? (
         <div className="flex items-center gap-2">
-          <span className="hidden size-9 animate-pulse rounded-full bg-white/10 dark:bg-black/10 sm:block" />
-          <span className="hidden h-4 w-16 animate-pulse rounded bg-white/10 dark:bg-black/10 sm:block" />
+          <span className="hidden size-9 animate-pulse rounded-full bg-ink/10 sm:block" />
+          <span className="hidden h-4 w-16 animate-pulse rounded-lg bg-ink/10 sm:block" />
         </div>
       ) : user === null ? (
         <div className="flex items-center gap-2">
           <Link
             href="/login"
-            className="rounded-md px-3 py-2 text-sm font-medium text-bone/80 transition-colors hover:text-bone"
+            className="rounded-lg px-3 py-2 text-sm font-medium text-steel transition-colors hover:text-ink"
           >
             Log in
           </Link>
           <Link
             href="/register"
-            className="rounded-md bg-safety font-display font-bold text-ink transition-colors hover:brightness-110 px-4 py-2 text-sm"
+            className="rounded-xl bg-safety px-4 py-2 font-display text-sm font-bold text-ink transition-colors hover:brightness-110"
           >
             Book a service
           </Link>
@@ -80,7 +80,7 @@ export function UserMenu() {
             aria-haspopup="menu"
             aria-expanded={open}
             onClick={() => setOpen((o) => !o)}
-            className="flex items-center gap-2 rounded-md px-2 py-1.5 transition-colors hover:bg-white/10 dark:hover:bg-black/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-safety"
+            className="flex items-center gap-2 rounded-full px-2 py-1.5 transition-colors hover:bg-ink/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-safety"
           >
             {user.avatarUrl ? (
               <Image
@@ -95,11 +95,11 @@ export function UserMenu() {
                 {initialsOf(user.name)}
               </span>
             )}
-            <span className="hidden max-w-40 truncate text-sm font-medium text-bone sm:block">
+            <span className="hidden max-w-40 truncate text-sm font-semibold text-ink sm:block">
               {user.name}
             </span>
             <ChevronDown
-              className={`size-4 text-bone/70 transition-transform ${open ? "rotate-180" : ""}`}
+              className={`size-4 text-steel transition-transform ${open ? "rotate-180" : ""}`}
               aria-hidden
             />
           </button>
@@ -107,19 +107,19 @@ export function UserMenu() {
           {open && (
             <div
               role="menu"
-              className="absolute right-0 top-full mt-2 w-60 overflow-hidden rounded-lg border border-white/10 bg-ink py-1.5 shadow-2xl shadow-black/40 dark:border-black/10"
+              className="absolute right-0 top-full mt-2 w-60 overflow-hidden rounded-2xl border border-edge bg-ticket-hi py-1.5 shadow-xl"
             >
-              <div className="border-b border-white/10 px-4 py-3 dark:border-black/10">
-                <p className="truncate text-sm font-semibold text-bone">
+              <div className="border-b border-edge px-4 py-3">
+                <p className="truncate text-sm font-semibold text-ink">
                   {user.name}
                 </p>
-                <p className="truncate text-xs text-bone/60">{user.email}</p>
+                <p className="truncate text-xs text-steel">{user.email}</p>
               </div>
               <Link
                 href={dashboardByRole[user.role]}
                 role="menuitem"
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-bone/85 transition-colors hover:bg-white/10 hover:text-bone dark:hover:bg-black/10"
+                className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-steel transition-colors hover:bg-ink/5 hover:text-ink"
               >
                 <LayoutDashboard className="size-4" aria-hidden />
                 Dashboard
@@ -128,7 +128,7 @@ export function UserMenu() {
                 type="button"
                 role="menuitem"
                 onClick={handleLogout}
-                className="flex w-full items-center gap-2.5 px-4 py-2.5 text-sm text-bone/85 transition-colors hover:bg-white/10 hover:text-bone dark:hover:bg-black/10"
+                className="flex w-full items-center gap-2.5 px-4 py-2.5 text-sm text-steel transition-colors hover:bg-ink/5 hover:text-ink"
               >
                 <LogOut className="size-4" aria-hidden />
                 Log out

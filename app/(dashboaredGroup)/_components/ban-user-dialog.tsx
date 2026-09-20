@@ -41,18 +41,18 @@ export function BanUserDialog({
       onClose={onClose}
       title={banning ? "Ban this user?" : "Unban this user?"}
     >
-      <p className="text-sm text-muted-foreground">
+      <p className="text-sm leading-relaxed text-steel">
         {banning ? "This will block " : "This will restore "}
-        <span className="font-semibold text-foreground">{user.name}</span>
+        <span className="font-semibold text-ink">{user.name}</span>
         {banning
           ? " from the platform. They won\u2019t be able to log in until you unban them."
           : " to the platform. They can log in again."}
       </p>
-      <div className="mt-5 flex justify-end gap-2">
+      <div className="mt-6 flex justify-end gap-2">
         <button
           type="button"
           onClick={onClose}
-          className="rounded-md border border-border px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+          className="rounded-xl border border-edge px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-muted"
         >
           Keep
         </button>
@@ -61,10 +61,10 @@ export function BanUserDialog({
           onClick={handleConfirm}
           disabled={pending}
           className={cn(
-            "rounded-md px-3 py-2 text-sm font-medium text-white transition-colors disabled:opacity-60",
+            "rounded-xl px-4 py-2 text-sm font-medium text-bone shadow-sm transition-colors disabled:pointer-events-none disabled:opacity-60",
             banning
-              ? "bg-red-600 hover:bg-red-700"
-              : "bg-green-700 hover:bg-green-800"
+              ? "bg-danger hover:bg-danger/85"
+              : "bg-success hover:bg-success/85"
           )}
         >
           {pending ? "Updating…" : label}

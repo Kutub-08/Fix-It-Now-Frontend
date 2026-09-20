@@ -23,7 +23,7 @@ const BOOKING_STATUSES: BookingStatus[] = [
 ];
 
 const selectCls =
-  "rounded-sm border-2 border-ink/30 bg-bone px-3 py-2 text-sm text-ink focus:border-safety focus:outline-none";
+  "rounded-xl border border-edge bg-ticket-hi px-3 py-2 text-sm text-ink focus:border-primary focus:outline-none";
 
 function makeHref(
   search: string,
@@ -78,7 +78,7 @@ export function AdminBookingsBoard({
       <form
         action="/admin-dashboard/bookings"
         method="get"
-        className="flex flex-wrap items-end gap-3 rounded-md border-2 border-ink bg-bone p-4 shadow-[4px_4px_0_rgba(33,30,25,0.1)]"
+        className="flex flex-wrap items-end gap-3 rounded-2xl border border-edge bg-ticket-hi p-4 shadow-sm"
       >
         <div className="min-w-0 flex-1 basis-48">
           <label
@@ -93,7 +93,7 @@ export function AdminBookingsBoard({
             type="search"
             defaultValue={search}
             placeholder="Customer or technician name…"
-            className="mt-1.5 w-full rounded-sm border-2 border-ink/30 bg-ticket px-3 py-2 text-sm text-ink placeholder:text-ink/30 focus:border-safety focus:outline-none"
+            className="mt-1.5 w-full rounded-xl border border-edge bg-ticket-hi px-3 py-2 text-sm text-ink placeholder:text-steel/60 focus:border-primary focus:outline-none"
           />
         </div>
         <div>
@@ -149,14 +149,14 @@ export function AdminBookingsBoard({
         </div>
         <button
           type="submit"
-          className="h-10 rounded-sm border-2 border-ink bg-ink px-4 font-mono text-xs font-bold uppercase tracking-widest text-bone transition-colors hover:bg-safety hover:text-ink"
+          className="h-10 rounded-xl bg-primary px-4 font-mono text-xs font-bold uppercase tracking-widest text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
         >
           Apply
         </button>
         {hasFilters && (
           <a
             href="/admin-dashboard/bookings"
-            className="h-10 rounded-sm border-2 border-safety px-3 py-2 font-mono text-xs font-bold uppercase tracking-widest text-safety transition-colors hover:bg-safety hover:text-ink"
+            className="h-10 rounded-xl border border-edge px-3 py-2 font-mono text-xs font-bold uppercase tracking-widest text-ink transition-colors hover:bg-muted"
           >
             Clear
           </a>
@@ -170,8 +170,8 @@ export function AdminBookingsBoard({
       </p>
 
       {bookings.length > 0 ? (
-        <div className="overflow-hidden rounded-md border-2 border-ink bg-bone shadow-[4px_4px_0_rgba(33,30,25,0.1)]">
-          <ul className="divide-y divide-dashed divide-ink/15">
+        <div className="overflow-hidden rounded-2xl border border-edge bg-ticket-hi shadow-sm">
+          <ul className="divide-y divide-edge">
             {bookings.map((b) => (
               <li
                 key={b.id}
@@ -205,7 +205,7 @@ export function AdminBookingsBoard({
                 <button
                   type="button"
                   onClick={() => setDetailId(b.id)}
-                  className="rounded-sm border-2 border-ink bg-ink px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-bone transition-colors hover:bg-safety hover:text-ink"
+                  className="rounded-xl bg-primary px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
                 >
                   Details
                 </button>

@@ -16,14 +16,19 @@ export function ThemeToggle({ className }: { className?: string }) {
   );
 
   const isDark = resolvedTheme === "dark";
+  const label = mounted
+    ? isDark
+      ? "Switch to light theme"
+      : "Switch to dark theme"
+    : "Toggle theme";
 
   return (
     <button
       type="button"
-      aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+      aria-label={label}
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className={cn(
-        "flex size-10 shrink-0 items-center justify-center rounded-md border border-current/25 text-current transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-safety dark:hover:bg-black/10",
+        "flex size-10 shrink-0 items-center justify-center rounded-xl border border-edge text-ink transition-colors hover:bg-ink/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-safety",
         className,
       )}
     >

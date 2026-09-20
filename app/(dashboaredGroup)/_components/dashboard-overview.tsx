@@ -80,7 +80,7 @@ export function DashboardOverview({
         />
       </div>
 
-      <section className="rounded-md border-2 border-dashed border-ink/30 bg-ticket-hi p-5">
+      <section className="rounded-2xl border border-edge bg-ticket-hi p-5 shadow-sm">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-safety">
@@ -92,7 +92,7 @@ export function DashboardOverview({
           </div>
           <Link
             href="/dashboard/bookings"
-            className="rounded-sm border-2 border-ink bg-ink px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-bone transition-colors hover:bg-safety hover:text-ink"
+            className="rounded-xl bg-primary px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-primary-foreground transition-colors hover:bg-primary/90"
           >
             View all
           </Link>
@@ -103,7 +103,7 @@ export function DashboardOverview({
             {recent.map((b) => (
               <li
                 key={b.id}
-                className="flex flex-wrap items-center gap-x-4 gap-y-1.5 border-b border-dashed border-ink/15 py-3 last:border-none"
+                className="flex flex-wrap items-center gap-x-4 gap-y-1.5 border-b border-edge py-3 last:border-none"
               >
                 <div className="min-w-0 flex-1">
                   <p className="truncate font-display text-[15px] font-bold text-ink">

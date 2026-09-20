@@ -24,13 +24,13 @@ export function TechnicianCard({
   const verified = technician?.isVerified ?? false;
 
   return (
-    <aside className="flex h-fit flex-col border-2 border-ink/80 bg-ticket-hi shadow-[6px_6px_0_rgba(33,30,25,0.25)]">
-      <div className="border-b-2 border-dashed border-ink/20 p-5">
+    <aside className="flex h-fit flex-col rounded-2xl border border-edge bg-ticket-hi shadow-sm">
+      <div className="border-b border-edge p-5">
         <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-safety">
           {"// the pro on this job"}
         </p>
         <div className="mt-4 flex items-center gap-3">
-          <span className="flex size-14 shrink-0 items-center justify-center rounded-full border-2 border-ink/60 bg-ticket font-display text-lg font-bold text-ink">
+          <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-primary/10 font-display text-lg font-bold text-primary">
             {initialsOf(name)}
           </span>
           <div className="min-w-0">
@@ -45,7 +45,7 @@ export function TechnicianCard({
       </div>
 
       <div className="flex flex-1 flex-col gap-5 p-5">
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 border-b-2 border-dashed border-ink/20 pb-4 font-mono text-[11px] text-steel">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-edge pb-4 font-mono text-[11px] text-steel">
           <span className="text-ink">
             {"\u2605"}{" "}
             {rating > 0 ? rating.toFixed(1) : "new"} ({reviews})
@@ -54,7 +54,9 @@ export function TechnicianCard({
             {experience} yr{experience === 1 ? "" : "s"} on the tools
           </span>
           {verified && (
-            <span className="font-bold text-safety">{"\u2713"} verified</span>
+            <span className="rounded-full bg-success-bg px-2 py-0.5 font-bold text-success">
+              {"\u2713"} verified
+            </span>
           )}
         </div>
 
@@ -70,7 +72,7 @@ export function TechnicianCard({
             {(skills.length > 0 ? skills : ["Vetted pro"]).map((skill) => (
               <li
                 key={skill}
-                className="border-2 border-ink/60 bg-ticket px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-ink"
+                className="rounded-lg border border-edge bg-muted px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-ink"
               >
                 {skill}
               </li>
@@ -79,7 +81,7 @@ export function TechnicianCard({
         </div>
       </div>
 
-      <div className="border-t-2 border-dashed border-ink/20 p-5">
+      <div className="border-t border-edge p-5">
         <p className="font-mono text-[10px] uppercase tracking-wider text-steel">
           {verified
             ? "Background-checked and rated by past customers."

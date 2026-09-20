@@ -12,7 +12,7 @@ export function EmptyState({
   actionLabel?: string;
 }) {
   return (
-    <div className="rounded-md border-2 border-dashed border-ink/30 bg-ticket-hi px-6 py-12 text-center">
+    <div className="rounded-2xl border-2 border-dashed border-edge bg-ticket-hi px-6 py-12 text-center">
       <p className="font-mono text-xs uppercase tracking-[0.2em] text-steel">
         Nothing on file
       </p>
@@ -21,7 +21,7 @@ export function EmptyState({
       {actionHref && actionLabel && (
         <Link
           href={actionHref}
-          className="mt-5 inline-block rounded-sm border-2 border-ink bg-ink px-4 py-2 font-mono text-xs font-bold uppercase tracking-widest text-bone transition-colors hover:bg-safety hover:text-ink"
+          className="mt-5 inline-block rounded-xl bg-primary px-4 py-2.5 font-mono text-xs font-bold uppercase tracking-widest text-primary-foreground transition-colors hover:bg-primary/90"
         >
           {actionLabel}
         </Link>

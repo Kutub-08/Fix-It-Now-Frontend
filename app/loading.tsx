@@ -34,7 +34,7 @@ export default function Loading() {
           {"// FixItNow \u00b7 dispatch"}
         </p>
 
-        <article className="mt-4 grid grid-cols-[44px_1fr] overflow-hidden rounded-sm border-2 border-ink/80 bg-ticket-hi shadow-[10px_10px_0_rgba(20,17,13,0.25)]">
+        <article className="mt-4 grid grid-cols-[44px_1fr] overflow-hidden rounded-2xl border border-edge bg-ticket-hi shadow-md">
           <TicketStub top="FixItNow" bottom="FIN-.." width="w-11" hole="size-6" />
 
           <div className="p-5 sm:p-6">
@@ -60,10 +60,10 @@ export default function Loading() {
                     <span
                       className={
                         isPunched
-                          ? "animate-punch size-3 rounded-full bg-ink"
+                          ? "animate-punch size-3 rounded-full bg-primary"
                           : isNext
                             ? "size-3 rounded-full bg-safety/40"
-                            : "size-3 rounded-full border-2 border-ink/35 bg-transparent"
+                            : "size-3 rounded-full border-2 border-edge bg-transparent"
                       }
                       style={{ animationDelay: `${i * 0.12}s` }}
                     />

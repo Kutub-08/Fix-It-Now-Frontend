@@ -7,13 +7,13 @@ export default function AdminBookingsLoading() {
         <div className="h-4 w-72 rounded bg-ink/10" />
       </div>
 
-      <div className="h-24 rounded-md border-2 border-ink/10 bg-bone p-4" />
+      <div className="h-24 rounded-2xl border border-edge bg-ticket-hi p-4" />
 
-      <div className="rounded-md border-2 border-ink/10 bg-bone">
+      <div className="overflow-hidden rounded-2xl border border-edge bg-ticket-hi">
         {Array.from({ length: 5 }).map((_, i) => (
           <div
             key={i}
-            className="flex items-center gap-4 border-b border-dashed border-ink/10 px-5 py-4 last:border-none"
+            className="flex items-center gap-4 border-b border-edge px-5 py-4 last:border-none"
           >
             <div className="flex-1 space-y-2">
               <div className="h-4 w-40 rounded bg-ink/10" />

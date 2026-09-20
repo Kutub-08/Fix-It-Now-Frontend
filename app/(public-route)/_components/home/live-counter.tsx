@@ -14,7 +14,7 @@ export function LiveCounter({ start = 128 }: { start?: number }) {
   }, []);
 
   return (
-    <span className="font-mono font-bold tabular-nums text-bone">
+    <span className="font-mono font-bold tabular-nums text-primary-foreground">
       {count.toLocaleString("en-IN")}
     </span>
   );

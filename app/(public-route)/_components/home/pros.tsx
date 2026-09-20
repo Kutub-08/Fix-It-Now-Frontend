@@ -17,6 +17,7 @@ function toHomePro(t: TechnicianListItem): HomePro {
     .toUpperCase();
 
   return {
+    id: t.id,
     name,
     initials,
     skill: t.skills[0] ?? "Technician",
@@ -35,7 +36,7 @@ export async function Pros() {
   const list = (technicians.data?.data ?? []).map(toHomePro);
 
   return (
-    <section id="pros" className="scroll-mt-20 border-t-2 border-dashed border-ink/20">
+    <section id="pros" className="scroll-mt-20 border-t border-edge">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <SectionHeading
           eyebrow="// Pros worth knowing"
@@ -45,14 +46,17 @@ export async function Pros() {
         <div className="grid gap-4 md:grid-cols-3">
           {list.map((pro: HomePro) => (
             <Card
-              key={pro.name}
-              className="flex flex-col rounded-sm border-ink/25 bg-ticket-hi p-6 shadow-none transition-all hover:-translate-y-0.5 hover:border-ink"
+              key={pro.id}
+              className="flex flex-col rounded-2xl border-edge bg-ticket-hi p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
             >
               <div className="flex items-center justify-between">
-                <span className="flex size-12 items-center justify-center rounded-full border-2 border-ink/60 bg-ticket font-display text-base font-bold">
+                <span className="flex size-12 items-center justify-center rounded-full bg-primary/10 font-display text-base font-bold text-primary">
                   {pro.initials}
                 </span>
-                <Badge className="rounded-sm border border-safety bg-transparent font-mono text-[10px] font-bold uppercase tracking-widest text-safety">
+                <Badge
+                  tone="amber"
+                  className="border border-safety/40 font-mono text-[10px] font-bold uppercase tracking-widest"
+                >
                   {"\u2713"} verified
                 </Badge>
               </div>
@@ -61,12 +65,12 @@ export async function Pros() {
                 {`${pro.skill} \u00b7 ${pro.area}`}
               </p>
               <p className="mt-3 text-sm leading-relaxed text-steel">{pro.bio}</p>
-              <div className="mt-auto flex items-center justify-between border-t-2 border-dashed border-ink/20 pt-3 font-mono text-[11px] text-steel">
+              <div className="mt-auto flex items-center justify-between border-t border-edge pt-3 font-mono text-[11px] text-steel">
                 <span>
                   {"\u2605"} {pro.rating} ({pro.reviews})
                 </span>
                 <span>{pro.experienceYrs} yrs</span>
-                <span className="font-bold text-ink">
+                <span className="font-bold text-primary">
                   {bdt(pro.hourlyRate)}/hr
                 </span>
               </div>

@@ -9,7 +9,7 @@ export const Input = forwardRef<
     <input
       ref={ref}
       className={cn(
-        "h-10 w-full rounded-lg border border-input bg-background px-3 text-sm text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-60",
+        "h-10 w-full rounded-xl border border-edge bg-ticket-hi px-3 text-sm text-ink shadow-xs placeholder:text-steel/70 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-60",
         className
       )}
       {...props}
@@ -26,7 +26,7 @@ export const Textarea = forwardRef<
     <textarea
       ref={ref}
       className={cn(
-        "w-full rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-60",
+        "w-full rounded-xl border border-edge bg-ticket-hi px-3 py-2 text-sm text-ink shadow-xs placeholder:text-steel/70 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-60",
         className
       )}
       {...props}
@@ -43,7 +43,7 @@ export const Select = forwardRef<
     <select
       ref={ref}
       className={cn(
-        "h-10 w-full rounded-lg border border-input bg-background px-3 text-sm text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-60",
+        "h-10 w-full rounded-xl border border-edge bg-ticket-hi px-3 text-sm text-ink shadow-xs focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-60",
         className
       )}
       {...props}
@@ -61,7 +61,7 @@ export function Label({
   return (
     <label
       className={cn(
-        "mb-1 block text-sm font-medium text-foreground",
+        "mb-1 block text-sm font-medium text-ink",
         className
       )}
       {...props}

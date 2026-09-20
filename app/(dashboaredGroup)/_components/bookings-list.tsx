@@ -24,9 +24,9 @@ export function BookingsList({ bookings }: { bookings: BookingListItem[] }) {
           {bookings.map((b) => (
             <li
               key={b.id}
-              className="rounded-md border-2 border-ink bg-bone shadow-[4px_4px_0_rgba(33,30,25,0.1)]"
+              className="overflow-hidden rounded-2xl border border-edge bg-ticket-hi shadow-sm"
             >
-              <div className="flex flex-wrap items-center justify-between gap-2 border-b-2 border-dashed border-ink/15 px-5 py-3">
+              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-edge px-5 py-3">
                 <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-steel">
                   Ticket · {b.id.slice(0, 8).toUpperCase()}
                 </p>
@@ -56,7 +56,7 @@ export function BookingsList({ bookings }: { bookings: BookingListItem[] }) {
                     </p>
                   )}
                   {b.status === "CANCELLED" && b.cancelReason && (
-                    <p className="mt-1 text-sm text-red-700">
+                    <p className="mt-1 text-sm text-danger">
                       Cancelled: {b.cancelReason}
                     </p>
                   )}

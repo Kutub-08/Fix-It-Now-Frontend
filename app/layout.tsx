@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo, Bricolage_Grotesque, IBM_Plex_Mono } from "next/font/google";
+import { Inter, Sora, IBM_Plex_Mono } from "next/font/google";
 import { Toaster } from "sonner";
 import { Providers } from "@/app/providers";
 import "./globals.css";
@@ -7,13 +7,13 @@ import { cn } from "@/lib/utils";
 import { Header } from "@/components/shared/header";
 import { Footer } from "@/components/shared/footer";
 
-const archivo = Archivo({
-  variable: "--font-archivo",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
+const sora = Sora({
+  variable: "--font-sora",
   subsets: ["latin"],
 });
 
@@ -41,8 +41,8 @@ export default function RootLayout({
       className={cn(
         "h-full",
         "antialiased",
-        archivo.variable,
-        bricolage.variable,
+        inter.variable,
+        sora.variable,
         ibmPlexMono.variable,
         "font-sans",
       )}

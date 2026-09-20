@@ -30,9 +30,9 @@ export function PaymentsList({ payments }: { payments: PaymentListItem[] }) {
           {payments.map((p) => (
             <li
               key={p.id}
-              className="rounded-md border-2 border-ink bg-bone shadow-[4px_4px_0_rgba(33,30,25,0.1)]"
+              className="overflow-hidden rounded-2xl border border-edge bg-ticket-hi shadow-sm"
             >
-              <div className="flex flex-wrap items-center justify-between gap-2 border-b-2 border-dashed border-ink/15 px-5 py-3">
+              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-edge px-5 py-3">
                 <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-steel">
                   {p.transactionId}
                 </p>
@@ -64,7 +64,7 @@ export function PaymentsList({ payments }: { payments: PaymentListItem[] }) {
                   <button
                     type="button"
                     onClick={() => setReceiptId(p.id)}
-                    className="rounded-sm border-2 border-ink bg-ink px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-bone transition-colors hover:bg-safety hover:text-ink"
+                    className="rounded-xl bg-primary px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-primary-foreground transition-colors hover:bg-primary/90"
                   >
                     Receipt
                   </button>

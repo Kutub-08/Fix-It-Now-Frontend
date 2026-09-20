@@ -51,16 +51,16 @@ export function BookingDetailDialog({
   return (
     <Dialog open={open} onClose={onClose} title="Booking detail">
       {error ? (
-        <p className="text-sm text-destructive">{error}</p>
+        <p className="text-sm text-danger">{error}</p>
       ) : loading ? (
-        <div className="space-y-3 animate-pulse">
-          <div className="h-4 w-40 rounded bg-ink/10" />
-          <div className="h-4 w-64 rounded bg-ink/10" />
-          <div className="h-4 w-52 rounded bg-ink/10" />
+        <div className="space-y-3">
+          <div className="h-4 w-40 animate-pulse rounded-sm bg-ink/10" />
+          <div className="h-4 w-64 animate-pulse rounded-sm bg-ink/10" />
+          <div className="h-4 w-52 animate-pulse rounded-sm bg-ink/10" />
         </div>
       ) : detail ? (
         <div className="space-y-4">
-          <div className="flex flex-wrap items-center justify-between gap-2">
+          <div className="flex flex-wrap items-center justify-between gap-2 border-y border-edge py-2.5">
             <p className="font-mono text-[11px] uppercase tracking-wider text-steel">
               Ticket · {detail.id.slice(0, 8).toUpperCase()}
             </p>
@@ -115,7 +115,7 @@ export function BookingDetailDialog({
             <p className="text-sm italic text-steel/80">“{detail.notes}”</p>
           )}
           {detail.cancelReason && (
-            <p className="text-sm text-red-700">
+            <p className="rounded-xl border border-danger/40 bg-danger-bg px-3 py-2 text-sm text-danger">
               Cancelled: {detail.cancelReason}
             </p>
           )}

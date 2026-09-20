@@ -11,11 +11,11 @@ type Tone =
 
 const toneClasses: Record<Tone, string> = {
   neutral: "bg-muted text-muted-foreground",
-  green: "bg-green-100 text-green-800",
-  amber: "bg-amber-100 text-amber-800",
-  red: "bg-red-100 text-red-700",
-  blue: "bg-blue-100 text-blue-800",
-  purple: "bg-purple-100 text-purple-800",
+  green: "bg-success-bg text-success",
+  amber: "bg-warning-bg text-warning",
+  red: "bg-danger-bg text-danger",
+  blue: "bg-info-bg text-info",
+  purple: "bg-info-bg text-info",
   zinc: "bg-muted text-muted-foreground",
 };
 
@@ -31,7 +31,7 @@ export function Badge({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium",
+        "inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-[11px] font-semibold",
         toneClasses[tone],
         className
       )}

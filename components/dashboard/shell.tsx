@@ -16,7 +16,7 @@ export function DashboardShell({
   const { user } = useAuth();
 
   return (
-    <div className="flex min-h-dvh bg-ticket-hi">
+    <div className="flex min-h-dvh bg-background">
       <Sidebar
         role={role}
         user={user ?? undefined}
@@ -25,7 +25,7 @@ export function DashboardShell({
       />
       <div className="flex min-w-0 flex-1 flex-col">
         <Topbar role={role} user={user ?? undefined} onMenu={() => setOpen(true)} />
-        <main className="flex-1 bg-[repeating-linear-gradient(0deg,var(--sheet-line)_0px,var(--sheet-line)_1px,transparent_1px,transparent_32px)]">
+        <main className="flex-1 bg-background">
           <div className="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6">
             {children}
           </div>

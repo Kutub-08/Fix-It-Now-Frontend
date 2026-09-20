@@ -5,15 +5,15 @@ export default function AvailabilityLoading() {
         <div className="h-3 w-40 rounded bg-ink/10" />
         <div className="h-8 w-52 rounded bg-ink/10" />
       </div>
-      <div className="rounded-md border-2 border-ink/10 bg-bone">
-        <div className="flex items-center justify-between border-b-2 border-dashed border-ink/10 px-5 py-3">
+      <div className="rounded-2xl border border-edge bg-ticket-hi">
+        <div className="flex items-center justify-between border-b border-edge px-5 py-3">
           <div className="h-3 w-32 rounded bg-ink/10" />
           <div className="h-8 w-28 rounded bg-ink/10" />
         </div>
         {Array.from({ length: 7 }).map((_, i) => (
           <div
             key={i}
-            className="flex items-center justify-between gap-4 border-b border-dashed border-ink/10 px-5 py-4 last:border-none"
+            className="flex items-center justify-between gap-4 border-b border-edge px-5 py-4 last:border-none"
           >
             <div className="space-y-2">
               <div className="h-3 w-24 rounded bg-ink/10" />

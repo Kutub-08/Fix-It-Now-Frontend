@@ -33,7 +33,7 @@ export function Dialog({
 
   const dialog = (
     <div
-      className="fixed inset-0 z-50 overflow-y-auto bg-black/50"
+      className="fixed inset-0 z-50 overflow-y-auto bg-ink/50 backdrop-blur-sm"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
@@ -41,20 +41,29 @@ export function Dialog({
     >
       <div className="flex min-h-full items-center justify-center p-4">
         <div
-          className="w-full max-w-md rounded-xl bg-background p-6 text-foreground shadow-xl"
+          className="animate-ticket relative w-full max-w-md rounded-2xl border border-edge bg-ticket-hi text-ink shadow-xl"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-lg font-semibold">{title}</h2>
-            <button
-              onClick={onClose}
-              aria-label="Close dialog"
-              className="flex size-8 items-center justify-center rounded-md text-muted-foreground hover:bg-muted"
-            >
-              ✕
-            </button>
+          <div className="p-5 sm:p-6">
+            <div className="mb-4 flex items-start justify-between gap-4">
+              <div className="min-w-0">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                  {"FixItNow"}
+                </p>
+                <h2 className="mt-1 font-display text-xl font-bold leading-tight tracking-tight text-ink">
+                  {title}
+                </h2>
+              </div>
+              <button
+                onClick={onClose}
+                aria-label="Close dialog"
+                className="flex size-8 shrink-0 items-center justify-center rounded-lg border border-edge text-steel transition-colors hover:bg-ink/5 hover:text-ink"
+              >
+                ✕
+              </button>
+            </div>
+            {children}
           </div>
-          {children}
         </div>
       </div>
     </div>

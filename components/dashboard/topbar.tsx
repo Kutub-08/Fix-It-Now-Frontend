@@ -26,13 +26,13 @@ export function Topbar({
     .replace(/\s+/g, " · ");
 
   return (
-    <header className="sticky top-0 z-30 border-b-2 border-dashed border-ink/25 bg-bone/95 backdrop-blur">
+    <header className="sticky top-0 z-30 border-b border-edge bg-ticket/85 backdrop-blur">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center gap-3 px-4 sm:px-6">
         <button
           type="button"
           onClick={onMenu}
           aria-label="Open navigation"
-          className="flex size-10 shrink-0 items-center justify-center rounded-sm border-2 border-ink/25 text-ink transition-colors hover:border-ink hover:bg-ticket lg:hidden"
+          className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-edge text-ink transition-colors hover:bg-ink/5 lg:hidden"
         >
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
             <path
@@ -45,7 +45,7 @@ export function Topbar({
         </button>
 
         <div className="flex min-w-0 items-baseline gap-3">
-          <span className="hidden font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-safety sm:inline">
+          <span className="hidden text-xs font-semibold uppercase tracking-[0.18em] text-primary sm:inline">
             {breadcrumb(pathname)}
           </span>
           <h1 className="truncate font-display text-xl font-bold tracking-tight text-ink">
@@ -54,19 +54,19 @@ export function Topbar({
         </div>
 
         <div className="ml-auto flex items-center gap-4">
-          <span className="hidden font-mono text-[10px] uppercase tracking-[0.2em] text-steel md:inline">
+          <span className="hidden text-xs font-semibold uppercase tracking-wider text-steel md:inline">
             {today}
           </span>
-          <span className="hidden h-5 w-px bg-ink/20 md:block" />
+          <span className="hidden h-5 w-px bg-edge md:block" />
           <div className="hidden items-center gap-2.5 md:flex">
-            <span className="max-w-40 truncate font-mono text-[11px] font-bold uppercase tracking-widest text-steel">
+            <span className="max-w-40 truncate text-sm font-semibold text-steel">
               {user?.name ?? "…"}
             </span>
-            <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-ink font-display text-xs font-bold text-bone">
+            <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary font-display text-xs font-bold text-primary-foreground">
               {user?.name?.trim().charAt(0).toUpperCase() ?? role.charAt(0)}
             </span>
           </div>
-          <span className="animate-stamp rounded-sm border-2 border-ink px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-ink shadow-[2px_2px_0_rgba(33,30,25,0.18)]">
+          <span className="rounded-full border border-edge bg-ticket px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-steel">
             {role}
           </span>
           <span className="text-ink">

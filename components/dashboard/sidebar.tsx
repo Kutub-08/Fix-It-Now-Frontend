@@ -37,7 +37,7 @@ export function Sidebar({
     <>
       {mobileOpen && (
         <div
-          className="fixed inset-0 z-40 bg-ink/50 backdrop-blur-sm dark:bg-black/50 lg:hidden"
+          className="fixed inset-0 z-40 bg-ink/50 backdrop-blur-sm lg:hidden"
           onClick={onClose}
           aria-hidden
         />
@@ -46,17 +46,17 @@ export function Sidebar({
       <aside
         aria-label="Dashboard navigation"
         className={cn(
-          "fixed inset-y-0 left-0 z-50 flex w-72 flex-col border-r-2 border-dashed border-ink/25 bg-bone",
+          "fixed inset-y-0 left-0 z-50 flex w-72 flex-col border-r border-edge bg-bone",
           "transition-transform duration-200 ease-out",
           "lg:sticky lg:top-0 lg:z-0 lg:h-dvh lg:translate-x-0",
           mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         )}
       >
         <div className="flex h-full flex-col">
-          <div className="border-b border-dashed border-ink/20 px-6 pb-5 pt-6">
+          <div className="border-b border-edge px-6 pb-5 pt-6">
             <Link href="/" onClick={onClose} className="group block">
-              <p className="font-mono text-[10px] font-bold uppercase tracking-[0.28em] text-safety">
-                Dispatch desk
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                Dashboard
               </p>
               <p className="mt-1.5 font-display text-2xl font-bold tracking-tight text-ink">
                 FixItNow
@@ -64,8 +64,8 @@ export function Sidebar({
             </Link>
           </div>
 
-          <nav className="flex-1 overflow-y-auto px-4 py-5">
-            <p className="px-3 font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-steel">
+          <nav className="flex-1 overflow-y-auto px-3 py-5">
+            <p className="px-3 text-xs font-semibold uppercase tracking-[0.18em] text-steel">
               {sectionLabel[role] ?? "Manage"}
             </p>
             <div className="mt-2 space-y-1">
@@ -78,18 +78,12 @@ export function Sidebar({
                     onClick={onClose}
                     aria-current={active ? "page" : undefined}
                     className={cn(
-                      "group flex items-center gap-3 border-l-2 px-3 py-2.5 font-display text-[15px] font-semibold transition-colors",
+                      "group flex items-center gap-3 rounded-xl px-3 py-2.5 font-display text-[15px] font-semibold transition-colors",
                       active
-                        ? "border-safety bg-ticket text-ink"
-                        : "border-transparent text-steel hover:bg-ticket/60 hover:text-ink"
+                        ? "bg-primary text-primary-foreground"
+                        : "text-steel hover:bg-ink/5 hover:text-ink"
                     )}
                   >
-                    <span
-                      className={cn(
-                        "size-1.5 shrink-0 rounded-full transition-colors",
-                        active ? "bg-safety" : "bg-ink/25 group-hover:bg-ink/60"
-                      )}
-                    />
                     {link.label}
                   </Link>
                 );
@@ -97,24 +91,16 @@ export function Sidebar({
             </div>
           </nav>
 
-          <div className="relative border-t-2 border-dashed border-ink/20 p-4">
-            <div className="absolute -top-0.75 left-1/2 flex -translate-x-1/2 gap-2">
-              {[0, 1, 2].map((i) => (
-                <span
-                  key={i}
-                  className="size-1.5 rounded-full bg-board ring-2 ring-bone"
-                />
-              ))}
-            </div>
+          <div className="border-t border-edge p-4">
             <div className="flex items-center gap-3 px-1">
-              <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-ticket font-display text-sm font-bold text-ink ring-1 ring-ink/20">
+              <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-safety font-display text-sm font-bold text-ink">
                 {initial}
               </span>
               <div className="min-w-0">
                 <p className="truncate font-display text-sm font-bold text-ink">
                   {user?.name ?? "Loading…"}
                 </p>
-                <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-steel">
+                <p className="text-[11px] font-semibold uppercase tracking-wider text-steel">
                   {role.toLowerCase()}
                 </p>
               </div>
@@ -122,7 +108,7 @@ export function Sidebar({
             <button
               type="button"
               onClick={handleLogout}
-              className="mt-4 w-full rounded-sm border-2 border-dashed border-ink/40 px-3 py-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-steel transition-colors hover:border-ink hover:bg-ink hover:text-bone"
+              className="mt-4 w-full rounded-xl border border-edge px-3 py-2 text-sm font-semibold text-steel transition-colors hover:border-danger hover:bg-danger hover:text-white"
             >
               Log out
             </button>

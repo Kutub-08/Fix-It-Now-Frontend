@@ -14,21 +14,21 @@ export function JobTicket({
   const jobs = service._count?.bookings ?? 0;
 
   return (
-    <article className="animate-ticket grid overflow-hidden border-2 border-ink/80 bg-ticket-hi shadow-[10px_10px_0_rgba(33,30,25,0.35)] sm:grid-cols-[52px_1fr]">
-      <aside className="relative hidden border-r-2 border-dashed border-ink/40 bg-ticket sm:block">
+    <article className="animate-ticket grid overflow-hidden rounded-2xl border border-edge bg-ticket-hi shadow-sm sm:grid-cols-[48px_1fr]">
+      <aside className="relative hidden border-r border-edge bg-ticket sm:block">
         <span className="absolute left-1/2 top-4 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.2em] text-steel [writing-mode:vertical-rl]">
           {serial}
         </span>
-        <span className="absolute left-1/2 top-1/2 size-7 -translate-x-1/2 -translate-y-1/2 rounded-full bg-board ring-4 ring-ticket" />
+        <span className="absolute left-1/2 top-1/2 size-6 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-primary/30 bg-ticket" />
         <span className="absolute bottom-4 left-1/2 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.2em] text-steel [writing-mode:vertical-rl]">
           fixed price
         </span>
       </aside>
 
       <div className="flex flex-col p-6 sm:p-8">
-        <div className="flex items-center justify-between border-b-2 border-dashed border-ink/25 pb-3 font-mono text-[10px] uppercase tracking-[0.2em] text-steel sm:hidden">
+        <div className="flex items-center justify-between border-b border-edge pb-3 font-mono text-[10px] uppercase tracking-[0.2em] text-steel sm:hidden">
           <span>{serial}</span>
-          <span className="text-ink">{formatBDT(service.price)}</span>
+          <span className="text-primary">{formatBDT(service.price)}</span>
         </div>
 
         <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.2em] text-safety sm:mt-0">
@@ -42,7 +42,7 @@ export function JobTicket({
           {service.description}
         </p>
 
-        <dl className="mt-6 grid gap-6 border-t-2 border-dashed border-ink/20 pt-5 sm:grid-cols-3">
+        <dl className="mt-6 grid gap-6 border-t border-edge pt-5 sm:grid-cols-3">
           <div>
             <dt className="font-mono text-[10px] uppercase tracking-widest text-steel">
               Duration
@@ -67,12 +67,12 @@ export function JobTicket({
           </div>
         </dl>
 
-        <div className="mt-6 flex flex-col gap-5 border-t-2 border-dashed border-ink/20 pt-5 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-6 flex flex-col gap-5 border-t border-edge pt-5 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="font-mono text-[10px] uppercase tracking-widest text-steel">
               Fixed price
             </p>
-            <p className="mt-1 font-display text-4xl font-bold tabular-nums text-ink">
+            <p className="mt-1 font-display text-4xl font-bold tabular-nums text-primary">
               {formatBDT(service.price)}
             </p>
             <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-steel">

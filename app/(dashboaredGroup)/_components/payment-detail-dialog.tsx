@@ -8,9 +8,9 @@ import { cn, formatBDT, formatDate, formatDateTime } from "@/lib/utils";
 import { getPaymentById } from "../_actions/getPaymentById";
 
 const STAMP: Record<PaymentStatus, { text: string; cls: string }> = {
-  COMPLETED: { text: "PAID", cls: "border-safety text-safety/90" },
-  PENDING: { text: "AWAITING", cls: "border-amber-600 text-amber-700" },
-  FAILED: { text: "VOID", cls: "border-red-600 text-red-700" },
+  COMPLETED: { text: "PAID", cls: "border-safety text-safety" },
+  PENDING: { text: "AWAITING", cls: "border-warning text-warning" },
+  FAILED: { text: "VOID", cls: "border-danger text-danger" },
   REFUNDED: { text: "REFUNDED", cls: "border-steel text-steel" },
 };
 
@@ -101,10 +101,10 @@ export function PaymentDetailDialog({
           <div className="h-4 w-52 rounded bg-ink/10" />
         </div>
       ) : detail ? (
-        <div className="relative overflow-hidden rounded-md border-2 border-ink bg-ticket-hi shadow-[4px_4px_0_rgba(33,30,25,0.15)]">
+        <div className="relative overflow-hidden rounded-2xl border border-edge bg-ticket-hi shadow-sm">
           <Stamp status={detail.status} />
 
-          <header className="border-b-2 border-dashed border-ink/25 px-5 py-4">
+          <header className="border-b border-edge px-5 py-4">
             <div className="flex items-end justify-between gap-4">
               <div>
                 <p className="font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-safety">
@@ -125,7 +125,7 @@ export function PaymentDetailDialog({
               <span className="font-bold">{detail.transactionId}</span>
             </Row>
 
-            <div className="my-3 border-t-2 border-dashed border-ink/25" />
+            <div className="my-3 border-t border-edge" />
 
             <div>
               <dt className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-steel">
@@ -158,11 +158,11 @@ export function PaymentDetailDialog({
             </Row>
 
             {detail.failureReason && (
-              <p className="text-sm text-red-700">{detail.failureReason}</p>
+              <p className="text-sm text-danger">{detail.failureReason}</p>
             )}
           </dl>
 
-          <div className="flex items-center justify-between gap-4 border-t-2 border-dashed border-ink/25 bg-bone px-5 py-4">
+          <div className="flex items-center justify-between gap-4 border-t border-edge bg-bone px-5 py-4">
             <p className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-steel">
               Total
             </p>

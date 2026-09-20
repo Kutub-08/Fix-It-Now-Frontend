@@ -11,7 +11,7 @@ import { EmptyState } from "./empty-state";
 const labelCls =
   "font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-steel";
 const inputCls =
-  "mt-1.5 w-full rounded-sm border-2 border-ink/30 bg-bone px-3 py-2 text-sm text-ink placeholder:text-ink/30 focus:border-safety focus:outline-none";
+  "mt-1.5 w-full rounded-xl border border-edge bg-ticket-hi px-3 py-2 text-sm text-ink placeholder:text-steel/60 focus:border-primary focus:outline-none";
 
 function Field({
   label,
@@ -87,7 +87,7 @@ export function AdminCategoriesBoard({
               {categories.map((category) => (
                 <li
                   key={category.id}
-                  className="rounded-md border-2 border-ink bg-bone p-5 shadow-[4px_4px_0_rgba(33,30,25,0.1)]"
+                  className="rounded-2xl border border-edge bg-ticket-hi p-5 shadow-sm"
                 >
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div className="min-w-0">
@@ -107,10 +107,10 @@ export function AdminCategoriesBoard({
                     </div>
                     <span
                       className={cn(
-                        "inline-flex shrink-0 items-center gap-1.5 rounded-sm border-2 px-2 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.18em]",
+                        "inline-flex shrink-0 items-center gap-1.5 rounded-full border px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.18em]",
                         category.isActive
-                          ? "border-green-700/60 bg-green-50 text-green-900"
-                          : "border-ink/30 bg-muted text-muted-foreground"
+                          ? "border-success/40 bg-success-bg text-success"
+                          : "border-edge bg-muted text-muted-foreground"
                       )}
                     >
                       <span
@@ -135,7 +135,7 @@ export function AdminCategoriesBoard({
           )}
         </section>
 
-        <aside className="h-fit rounded-md border-2 border-ink bg-bone p-5 shadow-[4px_4px_0_rgba(33,30,25,0.1)] lg:sticky lg:top-24">
+        <aside className="h-fit rounded-2xl border border-edge bg-ticket-hi p-5 shadow-sm lg:sticky lg:top-24">
           <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-safety">
             Add a category
           </p>
@@ -164,7 +164,7 @@ export function AdminCategoriesBoard({
             <button
               type="submit"
               disabled={pending}
-              className="w-full rounded-sm border-2 border-ink bg-ink px-4 py-2.5 font-display text-sm font-bold text-bone transition-colors hover:bg-safety hover:text-ink disabled:pointer-events-none disabled:opacity-50"
+              className="w-full rounded-xl bg-primary px-4 py-2.5 font-display text-sm font-bold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 disabled:pointer-events-none disabled:opacity-50"
             >
               {pending ? "Adding…" : "Add category"}
             </button>

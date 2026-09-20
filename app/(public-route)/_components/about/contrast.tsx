@@ -16,7 +16,7 @@ const notItems = [
 
 export function Contrast() {
   return (
-    <section className="border-t-2 border-dashed border-ink/20">
+    <section className="border-t border-edge">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-safety">
           {"// What we are \u2014 and what we\u2019re not"}
@@ -25,14 +25,14 @@ export function Contrast() {
           The fix, without the guesswork.
         </h2>
 
-        <div className="relative mt-10 grid overflow-hidden border-2 border-ink/80 bg-ticket-hi md:grid-cols-2">
+        <div className="relative mt-10 grid overflow-hidden rounded-2xl border border-edge bg-ticket-hi shadow-sm md:grid-cols-2">
           <div
             aria-hidden
-            className="absolute left-1/2 top-0 hidden h-full w-0 -translate-x-1/2 border-l-2 border-dashed border-ink/30 md:block"
+            className="absolute left-1/2 top-0 hidden h-full w-0 -translate-x-1/2 border-l border-dashed border-edge md:block"
           />
           <div
             aria-hidden
-            className="absolute left-1/2 top-1/2 hidden size-6 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-ink/80 bg-ticket md:block"
+            className="absolute left-1/2 top-1/2 hidden size-6 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-primary/40 bg-ticket-hi md:block"
           />
 
           <div className="px-6 py-8 sm:px-8 sm:py-10">
@@ -42,7 +42,7 @@ export function Contrast() {
             <ul className="mt-5 space-y-4">
               {areItems.map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-safety font-mono text-xs font-bold text-ink">
+                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-success-bg font-mono text-xs font-bold text-success">
                     {"\u2713"}
                   </span>
                   <span className="text-base font-medium leading-snug text-ink">
@@ -53,7 +53,7 @@ export function Contrast() {
             </ul>
           </div>
 
-          <div className="border-t-2 border-dashed border-ink/30 px-6 py-8 sm:px-8 sm:py-10 md:border-l-0 md:border-t-0">
+          <div className="border-t border-edge px-6 py-8 sm:px-8 sm:py-10 md:border-l-0 md:border-t-0">
             <p className="font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-steel">
               {"// We\u2019re not"}
             </p>
@@ -63,7 +63,7 @@ export function Contrast() {
                   key={item}
                   className="flex items-start gap-3 text-steel/80"
                 >
-                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full border-2 border-red-700/70 font-mono text-xs font-bold leading-none text-red-700">
+                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full border border-danger/40 font-mono text-xs font-bold leading-none text-danger">
                     {"\u00d7"}
                   </span>
                   <span className="text-base leading-snug [text-decoration:line-through] [text-decoration-color:color-mix(in_oklab,var(--steel)_60%,transparent)] [text-decoration-thickness:1px]">

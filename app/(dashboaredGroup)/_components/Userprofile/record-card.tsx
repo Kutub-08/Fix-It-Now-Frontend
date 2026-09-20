@@ -22,7 +22,7 @@ function FieldRow({
   mono?: boolean;
 }) {
   return (
-    <div className="flex flex-col gap-1 border-b border-dashed border-edge/60 py-3 last:border-none sm:flex-row sm:items-baseline sm:gap-4">
+    <div className="flex flex-col gap-1 border-b border-edge py-3 last:border-none sm:flex-row sm:items-baseline sm:gap-4">
       <dt className="w-36 shrink-0 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-steel">
         {label}
       </dt>
@@ -42,13 +42,13 @@ function WorkshopFile({ user }: { user: User }) {
   const profile = user.technicianProfile;
 
   return (
-    <div className="relative overflow-hidden rounded-md border-2 border-ink bg-bone shadow-[4px_4px_0_rgba(33,30,25,0.1)]">
-      <div className="flex items-center justify-between gap-3 border-b-2 border-dashed border-ink/20 px-6 py-4">
+    <div className="overflow-hidden rounded-2xl border border-edge bg-ticket-hi shadow-sm">
+      <div className="flex items-center justify-between gap-3 border-b border-edge px-6 py-4">
         <p className="font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-safety">
           Workshop file
         </p>
         {profile?.isVerified ? (
-          <span className="inline-flex items-center gap-1.5 rounded-sm border-2 border-ink px-2 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-ink shadow-[2px_2px_0_rgba(33,30,25,0.18)]">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-success-bg px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-success">
             <Check className="size-3" aria-hidden />
             Verified
           </span>
@@ -71,7 +71,7 @@ function WorkshopFile({ user }: { user: User }) {
             {profile.skills.map((skill) => (
               <span
                 key={skill}
-                className="rounded-sm border border-ink/30 bg-ticket px-2 py-1 font-mono text-[11px] font-medium uppercase tracking-wider text-ink"
+                className="rounded-lg border border-edge bg-muted px-2 py-1 font-mono text-[11px] font-medium uppercase tracking-wider text-ink"
               >
                 {skill}
               </span>
@@ -81,7 +81,7 @@ function WorkshopFile({ user }: { user: User }) {
 
         {profile && (
           <>
-            <dl className="mt-6 grid grid-cols-2 gap-px border border-dashed border-edge/60 bg-edge/50 sm:grid-cols-4">
+            <dl className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-edge bg-edge/50 sm:grid-cols-4">
               <div className="bg-bone px-4 py-3">
                 <dt className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-steel">
                   Hourly rate
@@ -146,13 +146,8 @@ export function RecordCard({ user }: { user: User }) {
         </p>
       </header>
 
-      <div className="relative overflow-hidden rounded-md border-2 border-ink bg-bone shadow-[4px_4px_0_rgba(33,30,25,0.1)]">
-        <span
-          aria-hidden
-          className="absolute left-3 top-3 size-4 rounded-full bg-ticket-hi ring-2 ring-edge"
-        />
-
-        <div className="flex flex-col gap-2 border-b-2 border-dashed border-ink/20 px-6 py-4 pl-10 sm:flex-row sm:items-center sm:justify-between">
+      <div className="overflow-hidden rounded-2xl border border-edge bg-ticket-hi shadow-sm">
+        <div className="flex flex-col gap-2 border-b border-edge px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-safety">
             Dispatch record
           </p>
@@ -164,18 +159,18 @@ export function RecordCard({ user }: { user: User }) {
           </p>
         </div>
 
-        <div className="flex flex-col gap-6 border-b border-dashed border-ink/20 px-6 py-7 sm:flex-row sm:items-center sm:gap-8">
+        <div className="flex flex-col gap-6 border-b border-edge px-6 py-7 sm:flex-row sm:items-center sm:gap-8">
           {user.avatarUrl ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src={user.avatarUrl}
               alt=""
-              className="size-24 shrink-0 rounded-full object-cover ring-2 ring-ink/15"
+              className="size-24 shrink-0 rounded-full object-cover ring-2 ring-primary/20"
             />
           ) : (
             <span
               aria-hidden
-              className="flex size-24 shrink-0 items-center justify-center rounded-full bg-safety font-display text-4xl font-bold text-ink shadow-[inset_0_-3px_0_rgba(33,30,25,0.18)] ring-2 ring-ink/15"
+              className="flex size-24 shrink-0 items-center justify-center rounded-full bg-primary/10 font-display text-4xl font-bold text-primary ring-2 ring-primary/20"
             >
               {initial}
             </span>
@@ -185,10 +180,10 @@ export function RecordCard({ user }: { user: User }) {
               {user.name}
             </h2>
             <div className="mt-3 flex flex-wrap items-center gap-2">
-              <span className="animate-stamp rounded-sm border-2 border-ink px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-ink shadow-[2px_2px_0_rgba(33,30,25,0.18)]">
+              <span className="rounded-full bg-primary px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-primary-foreground">
                 {user.role}
               </span>
-              <span className="inline-flex items-center gap-1.5 rounded-sm border border-ink/25 px-2 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-steel">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-edge px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-steel">
                 <span
                   className={cn(
                     "size-1.5 rounded-full",

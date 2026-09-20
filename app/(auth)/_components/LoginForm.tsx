@@ -8,7 +8,7 @@ import type { User } from "@/lib/types";
 import { Label } from "@/components/ui/input";
 
 const inputClass =
-  "w-full rounded-none border-2 border-ink/70 bg-ticket px-3 py-2.5 font-mono text-sm text-ink placeholder:text-steel/60 focus:border-safety focus:outline-none";
+  "w-full rounded-xl border border-edge bg-ticket-hi px-3 py-2.5 text-sm text-ink shadow-xs placeholder:text-steel/60 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:outline-none";
 
 const labelClass =
   "mb-1.5 block font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-steel";
@@ -95,11 +95,11 @@ export default function LoginForm({ redirectTo }: { redirectTo: string }) {
       {error && (
         <p
           role="alert"
-          className="flex items-start gap-2 border-2 border-dashed border-safety bg-ticket px-3 py-2.5"
+          className="flex items-start gap-2 rounded-xl border border-danger/30 bg-danger-bg px-3 py-2.5"
         >
           <span
             aria-hidden
-            className="font-mono text-sm font-bold text-safety"
+            className="font-mono text-sm font-bold text-danger"
           >
             {"\u2717"}
           </span>
@@ -110,7 +110,7 @@ export default function LoginForm({ redirectTo }: { redirectTo: string }) {
       <button
         type="submit"
         disabled={pending}
-        className="flex w-full items-center justify-center gap-2 rounded-none border-2 border-ink bg-ink px-4 py-3 font-display text-base font-bold text-bone transition-colors hover:bg-safety hover:text-ink disabled:pointer-events-none disabled:opacity-60"
+        className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 font-display text-base font-bold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 disabled:pointer-events-none disabled:opacity-60"
       >
         {pending && (
           <span

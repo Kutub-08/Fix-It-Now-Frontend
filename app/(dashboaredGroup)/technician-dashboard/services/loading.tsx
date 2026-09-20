@@ -11,7 +11,7 @@ export default function ServicesLoading() {
           {Array.from({ length: 3 }).map((_, i) => (
             <div
               key={i}
-              className="rounded-md border-2 border-ink/10 bg-bone p-5"
+              className="rounded-2xl border border-edge bg-ticket-hi p-5"
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1 space-y-2">
@@ -23,7 +23,7 @@ export default function ServicesLoading() {
             </div>
           ))}
         </div>
-        <div className="h-96 rounded-md border-2 border-ink/10 bg-bone p-5">
+        <div className="h-96 rounded-2xl border border-edge bg-ticket-hi p-5">
           <div className="h-3 w-28 rounded bg-ink/10" />
           <div className="mt-5 space-y-4">
             <div className="h-16 rounded bg-ink/10" />

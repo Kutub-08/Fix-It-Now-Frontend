@@ -8,10 +8,10 @@ export function StatCard({
   hint?: string;
 }) {
   return (
-    <div className="relative overflow-hidden rounded-md border-2 border-ink/80 bg-bone p-5 shadow-[4px_4px_0_rgba(33,30,25,0.12)]">
+    <div className="relative overflow-hidden rounded-2xl border border-edge bg-ticket-hi p-5 shadow-sm">
       <span
         aria-hidden
-        className="absolute right-3 top-3 size-3 rounded-full bg-ticket-hi ring-2 ring-edge"
+        className="absolute right-3 top-3 size-2.5 rounded-full bg-primary/20"
       />
       <p className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-steel">
         {label}

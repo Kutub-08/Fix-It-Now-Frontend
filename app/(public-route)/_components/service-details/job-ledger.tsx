@@ -21,7 +21,7 @@ export function JobLedger({
   dispatched: number;
 }) {
   return (
-    <section className="border-t-2 border-dashed border-ink/20">
+    <section className="border-t border-edge">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-safety">
           {"// job history"}
@@ -35,12 +35,12 @@ export function JobLedger({
         </p>
 
         {reviews.length > 0 ? (
-          <div className="mt-8 overflow-hidden border-2 border-ink/80 bg-ticket-hi">
-            <div className="hidden border-b-2 border-ink/80 bg-ink px-5 py-2.5 font-mono text-[10px] uppercase tracking-[0.2em] text-bone sm:grid sm:grid-cols-[1fr_auto]">
+          <div className="mt-8 overflow-hidden rounded-2xl border border-edge bg-ticket-hi shadow-sm">
+            <div className="hidden border-b border-edge bg-primary px-5 py-2.5 font-mono text-[10px] uppercase tracking-[0.2em] text-primary-foreground sm:grid sm:grid-cols-[1fr_auto]">
               <span>What the pro did well</span>
               <span className="text-right">Rating</span>
             </div>
-            <ul className="divide-y-2 divide-dashed divide-ink/20">
+            <ul className="divide-y divide-edge">
               {reviews.map((review, index) => (
                 <li
                   key={index}
@@ -48,7 +48,7 @@ export function JobLedger({
                 >
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
-                      <span className="flex size-6 shrink-0 items-center justify-center rounded-full border-2 border-ink/50 bg-ticket font-mono text-[9px] font-bold text-ink">
+                      <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-success-bg font-mono text-[9px] font-bold text-success">
                         {"\u2713"}
                       </span>
                       <span className="truncate text-sm font-semibold text-ink">
@@ -63,7 +63,7 @@ export function JobLedger({
                   </div>
                   <div className="flex items-center justify-between gap-3 sm:flex-col sm:items-end">
                     <Stars rating={review.rating} />
-                    <span className="-rotate-6 rounded-none border-2 border-safety/70 px-1.5 py-0.5 font-mono text-[9px] font-bold uppercase tracking-widest text-safety">
+                    <span className="rounded-full bg-success-bg px-2 py-0.5 font-mono text-[9px] font-bold uppercase tracking-widest text-success">
                       done {"\u2713"}
                     </span>
                   </div>
@@ -72,7 +72,7 @@ export function JobLedger({
             </ul>
           </div>
         ) : (
-          <div className="mt-8 border-2 border-dashed border-ink/30 p-10 text-center">
+          <div className="mt-8 rounded-2xl border-2 border-dashed border-edge p-10 text-center">
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-steel">
               Nothing logged yet
             </p>

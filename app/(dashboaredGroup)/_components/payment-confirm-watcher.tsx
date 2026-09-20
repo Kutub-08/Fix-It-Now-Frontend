@@ -56,11 +56,12 @@ export function PaymentConfirmWatcher({
   if (!hasPending) return null;
 
   return (
-    <div className="mt-6 rounded-md border-2 border-dashed border-amber-600/60 bg-amber-50 px-4 py-3">
-      <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-amber-900">
+    <div className="mt-6 rounded-xl border border-warning/40 bg-warning-bg px-4 py-3">
+      <p className="flex items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-warning">
+        <span className="size-1.5 animate-pulse rounded-full bg-current" aria-hidden />
         Payment confirming…
       </p>
-      <p className="mt-1 text-sm text-amber-900/80">
+      <p className="mt-1 text-sm text-warning">
         Stripe is confirming one of your bookings. This page refreshes
         automatically once it goes through.
       </p>

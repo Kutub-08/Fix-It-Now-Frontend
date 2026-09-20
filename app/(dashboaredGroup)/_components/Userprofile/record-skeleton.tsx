@@ -2,7 +2,7 @@ export function RecordSkeleton() {
   return (
     <div className="mx-auto w-full max-w-3xl animate-pulse space-y-6">
       <div className="h-3 w-40 rounded bg-ink/10" />
-      <div className="rounded-md border-2 border-ink/15 bg-bone p-6">
+      <div className="rounded-2xl border border-edge bg-ticket-hi p-6">
         <div className="flex items-center gap-6">
           <div className="size-24 shrink-0 rounded-full bg-ink/10" />
           <div className="flex-1 space-y-3">

@@ -8,9 +8,9 @@ export default function BookingsLoading() {
       {Array.from({ length: 3 }).map((_, i) => (
         <div
           key={i}
-          className="rounded-md border-2 border-ink/10 bg-bone p-5"
+          className="rounded-2xl border border-edge bg-ticket-hi p-5"
         >
-          <div className="flex items-center justify-between border-b-2 border-dashed border-ink/10 pb-3">
+          <div className="flex items-center justify-between border-b border-edge pb-3">
             <div className="h-3 w-28 rounded bg-ink/10" />
             <div className="h-6 w-24 rounded bg-ink/10" />
           </div>

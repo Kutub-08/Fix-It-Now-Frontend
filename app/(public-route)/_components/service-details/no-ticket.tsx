@@ -15,7 +15,7 @@ export function NoTicket({ serial }: { serial: string }) {
       </p>
       <Link
         href="/services"
-        className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-sm border-2 border-ink bg-ink px-6 font-display text-base font-bold text-bone transition-colors hover:bg-safety hover:text-ink"
+        className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-primary px-6 font-display text-base font-bold text-primary-foreground shadow-sm transition-all hover:-translate-y-px hover:bg-primary/90"
       >
         {"\u2190"} Back to the board
       </Link>

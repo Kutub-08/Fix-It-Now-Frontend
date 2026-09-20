@@ -8,15 +8,15 @@ export function EmptyState({
   action?: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-border bg-muted/40 px-6 py-16 text-center">
-      <div className="flex size-12 items-center justify-center rounded-full bg-muted text-2xl">
-        ◌
-      </div>
-      <h3 className="text-sm font-semibold text-foreground">{title}</h3>
+    <div className="rounded-2xl border border-dashed border-edge bg-ticket-hi px-6 py-14 text-center">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-steel">
+        Nothing here yet
+      </p>
+      <h3 className="mt-2 font-display text-xl font-bold text-ink">{title}</h3>
       {description && (
-        <p className="max-w-sm text-sm text-muted-foreground">{description}</p>
+        <p className="mx-auto mt-1 max-w-sm text-sm text-steel">{description}</p>
       )}
-      {action && <div className="mt-2">{action}</div>}
+      {action && <div className="mt-5">{action}</div>}
     </div>
   );
 }

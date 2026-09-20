@@ -14,7 +14,7 @@ import {
 } from "../../_actions/createBooking";
 
 const inputClass =
-  "w-full rounded-none border-2 border-ink/70 bg-ticket px-3 py-2.5 font-mono text-sm text-ink placeholder:text-steel/60 focus:border-safety focus:outline-none";
+  "w-full rounded-xl border border-edge bg-ticket-hi px-3 py-2.5 text-sm text-ink shadow-xs placeholder:text-steel/60 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:outline-none";
 
 const labelClass =
   "mb-1.5 block font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-steel";
@@ -159,7 +159,7 @@ export function BookServiceButton({
       <button
         type="button"
         onClick={handleOpen}
-        className="inline-flex h-12 items-center justify-center gap-2 rounded-sm border-2 border-ink bg-ink px-6 font-display text-base font-bold text-bone transition-colors hover:bg-safety hover:text-ink"
+        className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-primary px-6 font-display text-base font-bold text-primary-foreground shadow-sm transition-all hover:-translate-y-px hover:bg-primary/90"
       >
         Book this job <span aria-hidden>{"\u2192"}</span>
       </button>
@@ -167,17 +167,17 @@ export function BookServiceButton({
       {open &&
         createPortal(
           <div
-            className="fixed inset-0 z-50 flex justify-center overflow-y-auto bg-board/80 p-4 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex justify-center overflow-y-auto bg-ink/60 p-4 backdrop-blur-sm"
             onClick={handleClose}
             role="dialog"
             aria-modal="true"
             aria-label={`Book ${title}`}
           >
             <div
-              className="my-auto w-full max-w-lg animate-ticket border-2 border-ink bg-ticket-hi shadow-[10px_10px_0_rgba(33,30,25,0.35)]"
+              className="my-auto w-full max-w-lg animate-ticket rounded-2xl border border-edge bg-ticket-hi shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex items-center justify-between gap-4 border-b-2 border-dashed border-ink/25 px-5 py-3 sm:px-6">
+              <div className="flex items-center justify-between gap-4 border-b border-edge px-5 py-3 sm:px-6">
                 <p className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-steel">
                   {"// Book this job \u00b7 "}
                   {serial}
@@ -186,13 +186,13 @@ export function BookServiceButton({
                   type="button"
                   onClick={handleClose}
                   aria-label="Close booking form"
-                  className="flex size-8 shrink-0 items-center justify-center border-2 border-ink/40 font-mono text-sm text-ink transition-colors hover:border-safety hover:bg-safety"
+                  className="flex size-8 shrink-0 items-center justify-center rounded-full border border-edge font-mono text-sm text-ink transition-colors hover:border-safety hover:bg-safety hover:text-ink"
                 >
                   {"\u00d7"}
                 </button>
               </div>
 
-              <div className="flex items-baseline justify-between gap-4 border-b-2 border-dashed border-ink/25 px-5 py-4 sm:px-6">
+              <div className="flex items-baseline justify-between gap-4 border-b border-edge px-5 py-4 sm:px-6">
                 <div className="min-w-0">
                   <h2 className="truncate font-display text-2xl font-bold tracking-tight text-ink">
                     {title}
@@ -298,11 +298,11 @@ export function BookServiceButton({
                 {error && (
                   <p
                     role="alert"
-                    className="flex items-start gap-2 border-2 border-dashed border-safety bg-ticket px-3 py-2.5 text-sm leading-relaxed text-ink"
+                    className="flex items-start gap-2 rounded-xl border border-danger/30 bg-danger-bg px-3 py-2.5 text-sm leading-relaxed text-ink"
                   >
                     <span
                       aria-hidden
-                      className="font-mono text-sm font-bold text-safety"
+                      className="font-mono text-sm font-bold text-danger"
                     >
                       {"\u2717"}
                     </span>
@@ -313,7 +313,7 @@ export function BookServiceButton({
                 <button
                   type="submit"
                   disabled={pending || loadingProfile}
-                  className="flex w-full items-center justify-center gap-2 rounded-none border-2 border-ink bg-ink px-4 py-3 font-display text-base font-bold text-bone transition-colors hover:bg-safety hover:text-ink disabled:pointer-events-none disabled:opacity-60"
+                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 font-display text-base font-bold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 disabled:pointer-events-none disabled:opacity-60"
                 >
                   {pending ? (
                     <>

@@ -37,16 +37,16 @@ export function CancelBookingDialog({
 
   return (
     <Dialog open={open} onClose={onClose} title="Cancel booking?">
-      <p className="text-sm text-muted-foreground">
+      <p className="text-sm leading-relaxed text-steel">
         This will cancel{" "}
-        <span className="font-semibold text-foreground">{serviceTitle}</span>.
+        <span className="font-semibold text-ink">{serviceTitle}</span>.
         Once cancelled it can&apos;t be undone.
       </p>
       <label
         htmlFor="cancel-reason"
-        className="mb-1 mt-4 block text-sm font-medium text-foreground"
+        className="mb-1.5 mt-5 block font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-steel"
       >
-        Reason <span className="font-normal text-muted-foreground">(optional)</span>
+        Reason <span className="normal-case tracking-normal text-steel/70">(optional)</span>
       </label>
       <textarea
         id="cancel-reason"
@@ -54,13 +54,13 @@ export function CancelBookingDialog({
         onChange={(e) => setReason(e.target.value)}
         rows={2}
         placeholder="Changed my mind…"
-        className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none"
+        className="w-full rounded-xl border border-edge bg-ticket-hi px-3 py-2 text-sm text-ink shadow-xs placeholder:text-steel/60 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:outline-none"
       />
-      <div className="mt-5 flex justify-end gap-2">
+      <div className="mt-6 flex justify-end gap-2">
         <button
           type="button"
           onClick={onClose}
-          className="rounded-md border border-border px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+          className="rounded-xl border border-edge px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-ink/5"
         >
           Keep booking
         </button>
@@ -68,7 +68,7 @@ export function CancelBookingDialog({
           type="button"
           onClick={handleConfirm}
           disabled={pending}
-          className="rounded-md bg-red-600 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-red-700 disabled:opacity-60"
+          className="rounded-xl bg-danger px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-danger/85 disabled:pointer-events-none disabled:opacity-60"
         >
           {pending ? "Cancelling…" : "Cancel booking"}
         </button>

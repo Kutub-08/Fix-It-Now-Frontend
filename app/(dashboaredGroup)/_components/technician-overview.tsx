@@ -83,20 +83,20 @@ export function TechnicianOverview({
           <Link
             key={link.href}
             href={link.href}
-            className="group rounded-md border-2 border-ink bg-bone p-5 shadow-[4px_4px_0_rgba(33,30,25,0.1)] transition-transform hover:-translate-y-0.5"
+            className="group rounded-2xl border border-edge bg-ticket-hi p-5 shadow-sm transition-transform hover:-translate-y-0.5"
           >
             <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-safety">
               {link.label}
             </p>
             <p className="mt-1.5 text-sm text-steel">{link.hint}</p>
-            <p className="mt-3 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-ink transition-colors group-hover:text-safety">
+            <p className="mt-3 font-display text-sm font-bold text-primary transition-colors group-hover:text-primary/80">
               Open →
             </p>
           </Link>
         ))}
       </section>
 
-      <section className="rounded-md border-2 border-dashed border-ink/30 bg-ticket-hi p-5">
+      <section className="rounded-2xl border border-edge bg-ticket-hi p-5">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-safety">
@@ -108,7 +108,7 @@ export function TechnicianOverview({
           </div>
           <Link
             href="/technician-dashboard/bookings"
-            className="rounded-sm border-2 border-ink bg-ink px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-bone transition-colors hover:bg-safety hover:text-ink"
+            className="rounded-xl bg-primary px-4 py-2 font-display text-xs font-bold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
           >
             View all
           </Link>
@@ -119,7 +119,7 @@ export function TechnicianOverview({
             {recent.map((b) => (
               <li
                 key={b.id}
-                className="flex flex-wrap items-center gap-x-4 gap-y-1.5 border-b border-dashed border-ink/15 py-3 last:border-none"
+                className="flex flex-wrap items-center gap-x-4 gap-y-1.5 border-b border-edge py-3 last:border-none"
               >
                 <div className="min-w-0 flex-1">
                   <p className="truncate font-display text-[15px] font-bold text-ink">

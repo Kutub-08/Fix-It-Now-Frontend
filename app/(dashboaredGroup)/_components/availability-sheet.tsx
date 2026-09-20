@@ -6,7 +6,6 @@ import { toast } from "sonner";
 import { Plus, X } from "lucide-react";
 import type { DayOfWeek, TechnicianAvailability } from "@/lib/types";
 import { DAYS_OF_WEEK } from "@/lib/booking-status";
-import { cn } from "@/lib/utils";
 import { setTechnicianAvailability } from "../_actions/setTechnicianAvailability";
 
 interface Slot {
@@ -117,8 +116,8 @@ export function AvailabilitySheet({
         </p>
       </header>
 
-      <div className="rounded-md border-2 border-ink bg-bone shadow-[4px_4px_0_rgba(33,30,25,0.1)]">
-        <div className="flex flex-wrap items-center justify-between gap-2 border-b-2 border-dashed border-ink/15 px-5 py-3">
+      <div className="rounded-2xl border border-edge bg-ticket-hi shadow-sm">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-edge px-5 py-3">
           <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-steel">
             Weekly hours · {totalSlots} slot{totalSlots === 1 ? "" : "s"}
           </p>
@@ -126,13 +125,13 @@ export function AvailabilitySheet({
             type="button"
             onClick={handleSave}
             disabled={pending || totalSlots === 0}
-            className="rounded-sm border-2 border-ink bg-ink px-4 py-1.5 font-display text-sm font-bold text-bone transition-colors hover:bg-safety hover:text-ink disabled:pointer-events-none disabled:opacity-50"
+            className="rounded-xl bg-primary px-4 py-1.5 font-display text-sm font-bold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 disabled:pointer-events-none disabled:opacity-50"
           >
             {pending ? "Saving…" : "Save schedule"}
           </button>
         </div>
 
-        <ul className="divide-y divide-dashed divide-ink/15">
+        <ul className="divide-y divide-edge">
           {DAYS_OF_WEEK.map((day) => {
             const daySlots = slots[day];
             return (
@@ -148,14 +147,14 @@ export function AvailabilitySheet({
                         {daySlots.map((slot) => (
                           <span
                             key={slot.id}
-                            className="inline-flex items-center gap-1.5 rounded-sm border border-ink/30 bg-ticket px-2 py-1 font-mono text-[11px] font-medium tracking-wider text-ink"
+                            className="inline-flex items-center gap-1.5 rounded-lg border border-edge bg-ticket px-2 py-1 font-mono text-[11px] font-medium tracking-wider text-ink"
                           >
                             {slot.startTime}–{slot.endTime}
                             <button
                               type="button"
                               onClick={() => removeSlot(day, slot.id)}
                               aria-label={`Remove ${slot.startTime}–${slot.endTime}`}
-                              className="text-ink/50 transition-colors hover:text-red-700"
+                              className="text-ink/50 transition-colors hover:text-danger"
                             >
                               <X className="size-3" aria-hidden />
                             </button>
@@ -183,7 +182,7 @@ export function AvailabilitySheet({
                           [day]: { ...prev[day], start: e.target.value },
                         }))
                       }
-                      className="rounded-sm border-2 border-ink/30 bg-bone px-2 py-1 font-mono text-xs text-ink focus:border-safety focus:outline-none"
+                      className="rounded-lg border border-edge bg-ticket px-2 py-1 font-mono text-xs text-ink focus:border-primary focus:outline-none"
                     />
                     <span className="font-mono text-[10px] text-steel">→</span>
                     <label className="sr-only" htmlFor={`av-${day}-end`}>
@@ -199,15 +198,13 @@ export function AvailabilitySheet({
                           [day]: { ...prev[day], end: e.target.value },
                         }))
                       }
-                      className="rounded-sm border-2 border-ink/30 bg-bone px-2 py-1 font-mono text-xs text-ink focus:border-safety focus:outline-none"
+                      className="rounded-lg border border-edge bg-ticket px-2 py-1 font-mono text-xs text-ink focus:border-primary focus:outline-none"
                     />
                     <button
                       type="button"
                       onClick={() => addSlot(day)}
                       aria-label={`Add hours on ${DAY_LABELS[day]}`}
-                      className={cn(
-                        "flex size-8 shrink-0 items-center justify-center rounded-sm border-2 border-ink bg-ink text-bone transition-colors hover:bg-safety hover:text-ink"
-                      )}
+                      className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
                     >
                       <Plus className="size-4" aria-hidden />
                     </button>

@@ -11,7 +11,7 @@ import { updateTechnicianProfile } from "../_actions/updateTechnicianProfile";
 const labelCls =
   "font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-steel";
 const inputCls =
-  "mt-1.5 w-full rounded-sm border-2 border-ink/30 bg-bone px-3 py-2 text-sm text-ink placeholder:text-ink/30 focus:border-safety focus:outline-none";
+  "mt-1.5 w-full rounded-xl border border-edge bg-ticket-hi px-3 py-2 text-sm text-ink placeholder:text-steel/60 focus:border-primary focus:outline-none";
 
 function Field({
   label,
@@ -109,7 +109,7 @@ export function TechnicianProfileForm({ user }: { user: User }) {
 
       <form
         onSubmit={handleSubmit}
-        className="space-y-6 rounded-md border-2 border-ink bg-bone p-6 shadow-[4px_4px_0_rgba(33,30,25,0.1)]"
+        className="space-y-6 rounded-2xl border border-edge bg-ticket-hi p-6 shadow-sm"
       >
         <div className="grid gap-5 sm:grid-cols-2">
           <Field label="Full name" htmlFor="tp-name">
@@ -148,10 +148,10 @@ export function TechnicianProfileForm({ user }: { user: User }) {
                 <img
                   src={avatarUrl}
                   alt="Avatar preview"
-                  className="size-14 shrink-0 rounded-full border-2 border-ink/20 object-cover"
+                  className="size-14 shrink-0 rounded-full object-cover ring-2 ring-primary/20"
                 />
               ) : (
-                <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-safety font-display text-xl font-bold text-ink ring-2 ring-ink/15">
+                <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-primary/10 font-display text-xl font-bold text-primary ring-2 ring-primary/20">
                   {(name.trim()[0] ?? "?").toUpperCase()}
                 </span>
               )}
@@ -229,7 +229,7 @@ export function TechnicianProfileForm({ user }: { user: User }) {
             <button
               type="button"
               onClick={addSkill}
-              className="shrink-0 rounded-sm border-2 border-ink bg-ink px-3 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-bone transition-colors hover:bg-safety hover:text-ink"
+              className="shrink-0 rounded-xl bg-primary px-3 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
             >
               Add
             </button>
@@ -239,14 +239,14 @@ export function TechnicianProfileForm({ user }: { user: User }) {
               {skills.map((skill) => (
                 <span
                   key={skill}
-                  className="inline-flex items-center gap-1.5 rounded-sm border border-ink/30 bg-ticket px-2 py-1 font-mono text-[11px] font-medium uppercase tracking-wider text-ink"
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-edge bg-ticket px-2 py-1 font-mono text-[11px] font-medium uppercase tracking-wider text-ink"
                 >
                   {skill}
                   <button
                     type="button"
                     onClick={() => removeSkill(skill)}
                     aria-label={`Remove ${skill}`}
-                    className="text-ink/50 transition-colors hover:text-red-700"
+                    className="text-ink/50 transition-colors hover:text-danger"
                   >
                     <X className="size-3" aria-hidden />
                   </button>
@@ -256,11 +256,11 @@ export function TechnicianProfileForm({ user }: { user: User }) {
           )}
         </Field>
 
-        <div className="flex items-center justify-end gap-3 border-t-2 border-dashed border-ink/15 pt-5">
+        <div className="flex items-center justify-end gap-3 border-t border-edge pt-5">
           <button
             type="submit"
             disabled={pending}
-            className="rounded-sm border-2 border-ink bg-ink px-5 py-2.5 font-display text-sm font-bold text-bone transition-colors hover:bg-safety hover:text-ink disabled:pointer-events-none disabled:opacity-50"
+            className="rounded-xl bg-primary px-5 py-2.5 font-display text-sm font-bold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 disabled:pointer-events-none disabled:opacity-50"
           >
             {pending ? "Saving…" : "Save changes"}
           </button>

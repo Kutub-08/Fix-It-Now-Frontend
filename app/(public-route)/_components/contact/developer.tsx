@@ -57,17 +57,17 @@ const links = [
 
 export function Developer() {
   return (
-    <section className="hero-grid border-t-2 border-dashed border-bone/15 bg-board text-bone">
+    <section className="hero-grid border-t border-edge bg-primary text-primary-foreground">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-safety">
           {"// Built by"}
         </p>
-        <h2 className="mt-2 font-display text-3xl font-bold tracking-tight sm:text-4xl">
+        <h2 className="mt-2 font-display text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl">
           The person behind the board.
         </h2>
 
-        <div className="mt-10 grid gap-8 border-2 border-bone/25 bg-ink/40 p-6 sm:p-8 md:grid-cols-[220px_1fr]">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-[220px] overflow-hidden border-2 border-bone/30">
+        <div className="mt-10 grid gap-8 rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-6 sm:p-8 md:grid-cols-[220px_1fr]">
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-[220px] overflow-hidden rounded-2xl border border-primary-foreground/20">
             <Image
               src={"/developer.jpg"}
               alt={`Portrait of ${developer.name}`}
@@ -81,37 +81,37 @@ export function Developer() {
           <div className="flex flex-col">
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
-                <h3 className="font-display text-2xl font-bold tracking-tight">
+                <h3 className="font-display text-2xl font-bold tracking-tight text-primary-foreground">
                   {developer.name}
                 </h3>
-                <p className="mt-0.5 font-mono text-[11px] uppercase tracking-[0.2em] text-bone/60">
+                <p className="mt-0.5 font-mono text-[11px] uppercase tracking-[0.2em] text-primary-foreground/60">
                   {developer.role}
                 </p>
               </div>
-              <span className="animate-stamp rounded-sm border-2 border-safety px-2.5 py-1 font-mono text-xs font-bold uppercase tracking-widest text-safety">
+              <span className="animate-stamp rounded-full border border-safety bg-safety/10 px-2.5 py-1 font-mono text-xs font-bold uppercase tracking-widest text-safety">
                 {"Built \u2713"}
               </span>
             </div>
 
-            <p className="mt-4 max-w-lg text-base leading-relaxed text-bone/75">
+            <p className="mt-4 max-w-lg text-base leading-relaxed text-primary-foreground/80">
               {developer.bio}
             </p>
 
-            <ul className="mt-6 grid gap-2.5 border-t border-bone/15 pt-6 sm:grid-cols-2">
+            <ul className="mt-6 grid gap-2.5 border-t border-primary-foreground/15 pt-6 sm:grid-cols-2">
               {links.map((link) => {
                 const row = (
                   <>
                     <link.icon className="size-4 shrink-0 text-safety" aria-hidden />
                     <span className="min-w-0">
-                      <span className="block text-xs text-bone/50">{link.label}</span>
-                      <span className="block truncate text-sm font-medium text-bone">
+                      <span className="block text-xs text-primary-foreground/50">{link.label}</span>
+                      <span className="block truncate text-sm font-medium text-primary-foreground">
                         {link.value}
                       </span>
                     </span>
                   </>
                 );
                 const cls =
-                  "flex items-center gap-3 rounded-md border border-bone/15 px-3 py-2.5 transition-colors hover:border-safety/60 hover:bg-white/5";
+                  "flex items-center gap-3 rounded-xl border border-primary-foreground/15 px-3 py-2.5 transition-colors hover:border-safety/60 hover:bg-primary-foreground/10";
                 return (
                   <li key={link.label}>
                     {link.href ? (

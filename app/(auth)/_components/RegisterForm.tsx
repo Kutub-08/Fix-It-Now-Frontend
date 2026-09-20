@@ -8,10 +8,10 @@ import { Label } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
 const inputClass =
-  "w-full rounded-none border-2 border-ink/70 bg-ticket px-3 py-2.5 font-mono text-sm text-ink placeholder:text-steel/60 focus:border-safety focus:outline-none";
+  "w-full rounded-xl border border-edge bg-ticket-hi px-3 py-2.5 text-sm text-ink shadow-xs placeholder:text-steel/60 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:outline-none";
 
 const slipInputClass =
-  "w-full rounded-none border-2 border-ink/70 bg-bone px-3 py-2.5 font-mono text-sm text-ink placeholder:text-steel/60 focus:border-safety focus:outline-none";
+  "w-full rounded-xl border border-edge bg-bone px-3 py-2.5 text-sm text-ink shadow-xs placeholder:text-steel/60 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:outline-none";
 
 const labelClass =
   "mb-1.5 block font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-steel";
@@ -37,8 +37,8 @@ export default function RegisterForm() {
   });
 
   return (
-    <div className="w-full max-w-xl border-2 border-ink/80 bg-ticket-hi">
-      <div className="flex items-center justify-between gap-4 border-b-2 border-dashed border-ink/25 px-5 py-3 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-steel sm:px-6">
+    <div className="w-full max-w-xl overflow-hidden rounded-2xl border border-edge bg-ticket-hi shadow-sm">
+      <div className="flex items-center justify-between gap-4 border-b border-edge px-5 py-3 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-steel sm:px-6">
         <span>{"// New member"}</span>
         <span aria-hidden>{"\u25cb"} Form 02</span>
       </div>
@@ -58,10 +58,10 @@ export default function RegisterForm() {
                   aria-pressed={active}
                   onClick={() => setRole(option.value)}
                   className={cn(
-                    "flex flex-col gap-1 border-2 px-3 py-2.5 text-left transition-colors",
+                    "flex flex-col gap-1 rounded-xl border px-3 py-2.5 text-left transition-colors",
                     active
-                      ? "border-ink bg-ink text-bone"
-                      : "border-ink/40 bg-ticket text-ink hover:border-ink/70"
+                      ? "border-primary bg-primary text-primary-foreground"
+                      : "border-edge bg-ticket-hi text-ink hover:border-primary/40"
                   )}
                 >
                   <span className="flex w-full items-center justify-between gap-2 font-display text-sm font-bold uppercase tracking-wide">
@@ -171,8 +171,8 @@ export default function RegisterForm() {
 
         {role === "TECHNICIAN" && (
           <div className="animate-ticket">
-            <div className="border-2 border-ink/70 bg-ticket">
-              <div className="flex items-center justify-between gap-4 border-b-2 border-dashed border-ink/25 px-3.5 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-steel">
+            <div className="overflow-hidden rounded-xl border border-edge bg-ticket shadow-xs">
+              <div className="flex items-center justify-between gap-4 border-b border-edge px-3.5 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-steel">
                 <span>{"// Trade copy"}</span>
                 <span aria-hidden>{"\u25cf"} F.02a</span>
               </div>
@@ -254,11 +254,11 @@ export default function RegisterForm() {
         {state.message && (
           <p
             role="alert"
-            className="mt-5 flex items-start gap-2 border-2 border-dashed border-safety bg-ticket px-3 py-2.5"
+            className="mt-5 flex items-start gap-2 rounded-xl border border-danger/30 bg-danger-bg px-3 py-2.5"
           >
             <span
               aria-hidden
-              className="font-mono text-sm font-bold text-safety"
+              className="font-mono text-sm font-bold text-danger"
             >
               {"\u2717"}
             </span>
@@ -271,7 +271,7 @@ export default function RegisterForm() {
         <button
           type="submit"
           disabled={pending}
-          className="mt-5 flex w-full items-center justify-center gap-2 rounded-none border-2 border-ink bg-ink px-4 py-3 font-display text-base font-bold text-bone transition-colors hover:bg-safety hover:text-ink disabled:pointer-events-none disabled:opacity-60"
+          className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 font-display text-base font-bold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 disabled:pointer-events-none disabled:opacity-60"
         >
           {pending && (
             <span
@@ -283,12 +283,12 @@ export default function RegisterForm() {
         </button>
       </form>
 
-      <div className="border-t-2 border-dashed border-ink/25 px-5 py-4 sm:px-6">
+      <div className="border-t border-edge px-5 py-4 sm:px-6">
         <p className="font-mono text-[11px] uppercase tracking-wider text-steel">
           Already a member?{" "}
           <Link
             href="/login"
-            className="font-bold text-ink underline underline-offset-4 transition-colors hover:text-safety"
+            className="font-bold text-primary underline underline-offset-4 transition-colors hover:text-safety"
           >
             Log in
           </Link>

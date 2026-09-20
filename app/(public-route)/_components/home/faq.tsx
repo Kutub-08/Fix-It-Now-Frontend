@@ -40,7 +40,7 @@ export function Faq() {
   return (
     <section
       id="faq"
-      className="scroll-mt-20 border-t-2 border-dashed border-ink/20 bg-ticket"
+      className="scroll-mt-20 border-t border-edge bg-ticket"
     >
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <SectionHeading
@@ -53,13 +53,13 @@ export function Faq() {
           type="single"
           collapsible
           defaultValue="prices"
-          className="border-2 border-ink/80 bg-ticket-hi"
+          className="overflow-hidden rounded-2xl border border-edge bg-ticket-hi shadow-sm"
         >
           {faqs.map((faq) => (
             <Accordion.Item
               key={faq.value}
               value={faq.value}
-              className="not-first:border-t-2 not-first:border-t-dashed not-first:border-t-ink/25"
+              className="not-first:border-t not-first:border-t-edge"
             >
               <Accordion.Header asChild>
                 <Accordion.Trigger className="group flex w-full items-center justify-between gap-4 px-5 py-4 text-left sm:px-6">
@@ -68,12 +68,14 @@ export function Faq() {
                   </span>
                   <span
                     aria-hidden
-                    className="size-4 shrink-0 rounded-full border-2 border-ink/60 bg-transparent transition-colors group-data-[state=open]:border-safety group-data-[state=open]:bg-safety group-data-[state=open]:ring-4 group-data-[state=open]:ring-safety/25"
-                  />
+                    className="flex size-5 shrink-0 items-center justify-center rounded-full border border-edge text-sm leading-none text-steel transition-transform duration-200 group-data-[state=open]:rotate-45 group-data-[state=open]:border-transparent group-data-[state=open]:bg-primary group-data-[state=open]:text-primary-foreground"
+                  >
+                    +
+                  </span>
                 </Accordion.Trigger>
               </Accordion.Header>
               <Accordion.Content className="faq-answer overflow-hidden data-[state=closed]:hidden data-[state=open]:animate-accordion-down">
-                <div className="border-t-2 border-dashed border-ink/20 px-5 pb-6 pt-4 sm:px-6">
+                <div className="border-t border-edge px-5 pb-6 pt-4 sm:px-6">
                   <p className="max-w-2xl text-sm leading-relaxed text-steel">
                     {faq.a}
                   </p>

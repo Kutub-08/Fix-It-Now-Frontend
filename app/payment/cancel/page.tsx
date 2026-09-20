@@ -10,8 +10,8 @@ function PaymentCancelContent() {
 
   return (
     <div className="flex min-h-[60vh] items-center justify-center p-8">
-      <div className="w-full max-w-md rounded-md border-2 border-ink bg-bone p-8 shadow-[6px_6px_0_rgba(33,30,25,0.15)]">
-        <p className="font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-red-700">
+      <div className="w-full max-w-md rounded-2xl border border-edge bg-ticket-hi p-8 shadow-md">
+        <p className="font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-danger">
           Payment cancelled
         </p>
         <h1 className="mt-2 font-display text-3xl font-bold tracking-tight text-ink">
@@ -29,7 +29,7 @@ function PaymentCancelContent() {
         <div className="mt-6">
           <Link
             href="/dashboard/bookings"
-            className="inline-flex items-center justify-center rounded-sm border-2 border-ink bg-ink px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-bone transition-colors hover:bg-safety hover:text-ink"
+            className="inline-flex items-center justify-center rounded-xl bg-primary px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-primary-foreground transition-colors hover:bg-primary/90"
           >
             Back to my bookings
           </Link>
